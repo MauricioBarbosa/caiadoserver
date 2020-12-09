@@ -1,0 +1,42 @@
+@layout('shared/_Shared')
+
+@section('content')
+<div class="w-100 d-flex flex-column align-items-center justify-content-center h-15">
+    <div class="d-flex flex-row w-100 p-0 pl-5 h-0">
+        <a href="/"><b>Home</b></a>
+        <b class="mx-2">>></b>
+        <p><b> Usuários </b></p>
+    </div>
+    <div class="bg-white border rounded border-secondary d-flex flex-column p-5" style="width: 95%; min-height: 80vh;">
+        <form action="get" class="align-self-center w-100">
+            <div class="row">
+                <input type="text" class="form-control col-6" aria-label="Large" aria-describedby="inputGroup-sizing-default" placeholder="Pesquisar">
+                <div class="input-group col">
+                    <div class="input-group-prepend">
+                      <label class="input-group-text" for="inputGroupSelect01">Pesquisar Por:</label>
+                    </div>
+                    <select class="custom-select">
+                      <option selected>Nome</option>
+                      <option value="2">CPF</option>
+                      <option value="3">Usuário</option>
+                    </select>
+                  </div>
+                <button class="btn btn-success mx-2"><i class="fas fa-search"></i></button>
+                <button class="btn btn-success"><i class="fas fa-plus"></i></button>
+            </div>
+        </form>
+        <div id="#divtusuarios" class="mt-4 d-none">
+          <table class="table" id="#tusuarios">
+            <thead id="#theadusuarios">
+            </thead>
+            <tbody id="#tbodyusuarios">
+            </tbody>
+          </table>
+        </div>
+    </div>
+</div>
+@endsection
+
+@section('script')
+<script src="/views/usuario/gerenciar.js"></script>
+@endsection

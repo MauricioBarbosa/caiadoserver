@@ -1,0 +1,28 @@
+@layout('shared/_Shared')
+
+@section('content')
+<div class="w-100 d-flex flex-column align-items-center justify-content-center h-15">
+    <div class="d-flex flex-row w-100 pt-3 pb-1 pl-5 h-0">
+        <a href="/"><b>Home</b></a>
+        <b class="mx-2">>></b>
+        <a href="/administradores"><b>Usuarios</b></a>
+        <b class="mx-2">>></b>
+        <p><b>Mauricio</b></p>
+    </div>
+    <div class="bg-white border rounded border-secondary d-flex flex-column align-items-center justify-content-center h-auto" style="width: 95%; min-height: 80vh;">
+        <div class="d-flex justify-content-around w-100">
+            <a href="#"  class="w-50 bg-white border rounded p-1 text-center text-dark" style="font-size:1.5rem;" id="#btnAlteracao" onclick="index.carregarFormulario()">Alterar</a>
+            <a href="#"  class="w-50 bg-secondary border rounded p-1 text-center text-white" style="font-size:1.5rem;" id="#btnHistorico" onclick="index.carregarHistorico()">Histórico</a>
+        </div>
+        <div style="min-height: 87.5%;" class="w-100 mb-4" id="#body">
+        <!-- FORM -->  
+        <!-- --> 
+        </div>    
+    </div>
+</div>
+
+@endsection
+
+@section('script')
+<script src="/views/usuario/alterar.js"></script>
+@endsection

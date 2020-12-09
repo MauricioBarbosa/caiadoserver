@@ -1,0 +1,24 @@
+body{
+    background-color: rgb(222, 222, 222);
+}
+
+html{
+    height: 100%;
+    width: 100%;
+}
+
+.menu{
+    min-height: 89vh;
+}
+
+.cursor-pointer{
+    cursor: pointer;
+  }
+
+#mostrar{
+    display: none;
+}
+  
+#passar_mouse:hover #mostrar{
+    display:block;
+}

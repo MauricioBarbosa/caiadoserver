@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="/lib/fontawesome/css/all.css" rel="stylesheet">
+    <script src="/lib/jquery/jquery.js"></script>
+    <script src="/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <title>Home</title>
+</head>
+<body class="d-flex flex-column h-100">
+    <header class="bg-primary d-flex flex-row justify-content-between align-items-center px-4" style="width: 100%; min-height: 11vh">
+        <div class="d-flex flex-row align-content-center">
+            <a href="/">
+                <img src="/shared/images/logo.png" />
+            </a>
+            <b class="text-white pl-4" style="font-family: 'Roboto', sans-serif; font-size: 36px;">App Manager</b>
+        </div>
+        @section('username')
+            <button type="button" role="button" aria-haspopup="true" aria-expanded="false" class="border border-white d-flex align-items-center justify-content-between p-2 
+            dropdown-toggle bg-primary text-white" data-toggle="dropdown" style="width: 17%; height: 65%" id="dropdownMenuButton">
+                <i class="fas fa-user-circle fa-2x"></i>
+                <span><b class="text-white">{{ admin.nome }}</b></span>
+            </button>
+            <div class="dropdown-menu ml-4" aria-labelledby="dropdownMenuButton" style="width: 17%;">
+                <a class="dropdown-item" href="#">Meu Perfil</a>
+                <a class="dropdown-item" href="#">Meus SACs</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="/logout"><i class="fas fa-sign-out-alt"></i><span class="pl-3">Sair</span></a>
+            </div>
+        @endsection
+    </header>
+    <div class="d-flex flex-row ">
+        @if(user.nivel == 1)
+            @include('shared/menu')
+        @else 
+            @include('shared/menuassistente')
+        @endif
+        @!section('content')
+    </div>
+</body>
+@!section('script')
+@include('shared/_Script')
+</html>
