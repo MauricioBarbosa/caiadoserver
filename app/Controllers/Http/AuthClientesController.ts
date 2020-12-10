@@ -1,7 +1,5 @@
 import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
-import { Md5 } from 'md5-typescript';
 import UsuarioCliente from 'App/Models/UsuarioCliente';
-import { Response } from '@adonisjs/core/build/standalone';
 
 export default class AuthClientesController {
 

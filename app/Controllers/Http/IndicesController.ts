@@ -1,7 +1,6 @@
 // import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 
 import View from "@ioc:Adonis/Core/View";
-import authConfig from "Config/auth";
 
 export default class IndicesController {
 

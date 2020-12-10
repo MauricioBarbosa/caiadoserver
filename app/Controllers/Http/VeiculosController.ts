@@ -1,5 +1,4 @@
 import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
-import UsuarioCliente from 'App/Models/UsuarioCliente';
 import Cliente from 'App/Models/Cliente';
 
 export default class VeiculosController {

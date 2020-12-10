@@ -1,8 +1,5 @@
 import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import Cliente from 'App/Models/Cliente';
-import { schema, rules } from '@ioc:Adonis/Core/Validator'; 
-import Endereco from 'App/Models/Endereco';
-import Usuario from 'App/Models/UsuarioCliente';
 import UsuarioCliente from 'App/Models/UsuarioCliente';
 import { Md5 } from 'md5-typescript';
 

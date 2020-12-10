@@ -11,7 +11,7 @@ export default class AuthAdministradoresController {
         return View.render('Login/login');
     }
 
-    public async login({auth, request, response, session, view}: HttpContextContract){
+    public async login({auth, request, response, session}: HttpContextContract){
 
         const username = request.input('username'); 
         const password = Md5.init(request.input('senha'));

@@ -1,5 +1,4 @@
-import { DateTime } from 'luxon'
-import { BaseModel, column, belongsTo, BelongsTo, hasOne, HasOne } from '@ioc:Adonis/Lucid/Orm'
+import { BaseModel, column, belongsTo, BelongsTo} from '@ioc:Adonis/Lucid/Orm'
 import Administrador from './Administrador';
 
 export default class UsuarioAdministrador extends BaseModel {
