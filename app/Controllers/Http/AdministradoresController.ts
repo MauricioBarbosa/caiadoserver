@@ -5,16 +5,13 @@ import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import Administrador from  "App/Models/Administrador";
 import UsuarioAdministrador from "App/Models/UsuarioAdministrador";
 import { Md5 } from "md5-typescript";
-import Database from '@ioc:Adonis/Lucid/Database';
-import { Response } from "@adonisjs/core/build/standalone";
-import authConfig from "Config/auth";
 
 export default class AdministradoresController {
     //views
     public index({session, auth} : HttpContextContract){
         if(auth.use('web').user != null && auth.use('web').user != undefined){
             const usr = auth.use('web').user; 
-            if(usr.nivel < 2){
+            if(usr!=null&&usr.nivel < 2){
                 return View.render('_usuarioAdministrador/index', {
                     user: session.get('user'),
                     admin: session.get('admin')
@@ -26,7 +23,7 @@ export default class AdministradoresController {
     public indexCadastrar({session, auth}: HttpContextContract){
         if(auth.use('web').user != null && auth.use('web').user != undefined){
             const usr = auth.use('web').user;
-            if(usr.nivel == 1){
+            if(usr!= null&&usr.nivel == 1){
                 return View.render('_usuarioAdministrador/usuario', {
                     user: session.get('user'),
                     admin: session.get('admin')
@@ -40,7 +37,7 @@ export default class AdministradoresController {
     public indexAlterar({session, auth}: HttpContextContract){
         if(auth.use('web').user != null && auth.use('web').user != undefined){
             const usr = auth.use('web').user;
-            if(usr.nivel == 1){
+            if(usr!=null&&usr.nivel == 1){
                 return View.render('_usuarioAdministrador/alterar', {
                     user: session.get('user'),
                     admin: session.get('admin')
@@ -82,7 +79,7 @@ export default class AdministradoresController {
     public async getAll({response, auth}: HttpContextContract){
         if(auth.use('web').user != null && auth.use('web').user != undefined){
             const user = auth.use('web').user; 
-            if(user.nivel == 1){
+            if(user!=null&&user.nivel == 1){
             const usuarios = await UsuarioAdministrador
             .query()
             .preload('administrador');
