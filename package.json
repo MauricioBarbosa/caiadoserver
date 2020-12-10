@@ -4,8 +4,12 @@
   "private": true,
   "scripts": {
     "build": "node ace build --production",
-    "start": "node ace serve",
-    "dev": "node ace serve --watch"
+    "start": "node ace serve --watch",
+    "dev": "node ace serve --watch",
+    "start:prod": "node ./build/server.js"
+  },
+  "engines":{
+    "node": "12.16.2"
   },
   "devDependencies": {
     "@adonisjs/assembler": "^3.0.6",
