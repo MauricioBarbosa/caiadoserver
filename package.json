@@ -6,7 +6,7 @@
     "build": "node ace build --production",
     "start": "node ace serve --watch",
     "dev": "node ace serve --watch",
-    "start:prod": "node ./build/server.js"
+    "start:prod": "ENV_SILENT=true node ./build/server.js"
   },
   "engines":{
     "node": "12.16.2"
